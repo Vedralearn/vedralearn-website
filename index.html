@@ -720,264 +720,247 @@
 </head>
 <body>
     <!-- Navigation Header -->
-    <header>
-        <nav>
-            <div class="logo-section">
-                <img src="images/logo.png" alt="Vedra Learn Technologies" class="logo-img">
-                <span class="logo-text">Vedra Learn Technologies</span>
+    <header style="background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 100;">
+        <nav style="max-width: 1300px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 2.5rem;">
+            <div style="display: flex; align-items: center; gap: 0.7rem;">
+                <img src="images/logo.png" alt="Vedra Learn" style="height: 42px; width: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,198,255,0.08);">
+                <span style="font-size: 1.35rem; font-weight: 800; color: #0a2540; letter-spacing: -1px;">VedraLearn Technologies</span>
             </div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#courses">Courses</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#testimonials">Reviews</a></li>
+            <ul style="display: flex; gap: 2.2rem; list-style: none; align-items: center;">
+                <li><a href="#home" style="color: #0a2540; font-weight: 600; text-decoration: none; font-size: 1rem;">Home</a></li>
+                <li><a href="#about" style="color: #0a2540; font-weight: 600; text-decoration: none; font-size: 1rem;">About</a></li>
+                <li><a href="#services" style="color: #0a2540; font-weight: 600; text-decoration: none; font-size: 1rem;">Services</a></li>
+                <li><a href="#community" style="color: #0a2540; font-weight: 600; text-decoration: none; font-size: 1rem;">Community</a></li>
+                <li><a href="#contact" style="color: #0a2540; font-weight: 600; text-decoration: none; font-size: 1rem;">Contact</a></li>
             </ul>
-            <div class="nav-buttons">
-                <button class="btn-login">Login</button>
-                <button class="btn-signup">Sign Up</button>
+            <div style="display: flex; gap: 0.7rem;">
+                <a href="#login" style="background: #fff; color: #0072ff; font-weight: 700; border: 2px solid #0072ff; border-radius: 5px; padding: 0.6rem 1.3rem; font-size: 0.98rem; text-decoration: none;">Login</a>
+                <a href="#contact" style="background: #0072ff; color: #fff; font-weight: 700; border: none; border-radius: 5px; padding: 0.6rem 1.3rem; font-size: 0.98rem; text-decoration: none; box-shadow: 0 2px 8px rgba(0,114,255,0.08);">Get Started</a>
             </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Master In-Demand Skills with Expert-Led Courses</h1>
-            <p>Transform your career with industry-focused learning paths designed by professionals. Gain practical knowledge, build real projects, and advance your professional growth at your own pace.</p>
-            <div class="hero-buttons">
-                <button class="btn-primary">Explore Courses</button>
-                <button class="btn-secondary">Watch Demo</button>
+    <section id="home" style="background: linear-gradient(120deg, #e3eafc 0%, #f7fafc 100%); padding: 5.5rem 0 4rem 0;">
+        <div style="max-width: 1250px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 3rem;">
+            <div style="flex: 1 1 420px; min-width: 320px;">
+                <h1 style="font-size: 3.1rem; font-weight: 900; line-height: 1.08; margin-bottom: 1.3rem; color: #0a2540; letter-spacing: -1.5px;">Launch Your Career with <span style="color: #0072ff;">Real Experience</span></h1>
+                <p style="font-size: 1.22rem; margin-bottom: 2.1rem; color: #333;">Get real-world skills, work on industry projects, and join a vibrant tech community. Your journey to a successful career starts here.</p>
+                <div style="display: flex; gap: 1.1rem; flex-wrap: wrap;">
+                    <a href="#contact" style="background: #0072ff; color: #fff; font-weight: 700; border: none; border-radius: 5px; padding: 0.9rem 2.1rem; font-size: 1.05rem; text-decoration: none; box-shadow: 0 2px 8px rgba(0,114,255,0.08);">Contact Us</a>
+                </div>
             </div>
-        </div>
-        <div class="hero-image">
-            <img src="images/dp.png" alt="Vedra Learn Hero">
+            <div style="flex: 1 1 350px; min-width: 300px; display: flex; justify-content: center;">
+                <img src="images/dp.png" alt="Vedra Learn Hero" style="width: 100%; max-width: 410px; border-radius: 1.5rem; box-shadow: 0 8px 40px rgba(0,114,255,0.13);">
+            </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="stats-container">
-            <div class="stat-item">
-                <h3>50K+</h3>
-                <p>Active Learners</p>
+    <!-- About Section -->
+    <section id="about" style="background: #f7fafc; padding: 4.5rem 0 3.5rem 0;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 3rem;">
+            <div style="flex: 1 1 400px; min-width: 320px;">
+                <h2 style="font-size: 2.2rem; font-weight: 800; color: #0072ff; margin-bottom: 1.1rem;">About VedraLearn Technologies</h2>
+                <p style="font-size: 1.13rem; color: #222; margin-bottom: 1.2rem;">We are a forward-thinking team passionate about empowering students and graduates with real-world skills. Our mission at VedraLearn Technologies is to connect you with hands-on internships and live projects, guided by industry mentors, so you can build a portfolio that stands out.</p>
+                <ul style="color: #444; font-size: 1.01rem; line-height: 1.7; margin-left: 1.2rem;">
+                    <li>✔️ Real company projects, not just simulations</li>
+                    <li>✔️ Personalized mentorship and feedback</li>
+                    <li>✔️ Focus on employability and career growth</li>
+                </ul>
             </div>
-            <div class="stat-item">
-                <h3>200+</h3>
-                <p>Expert Courses</p>
-            </div>
-            <div class="stat-item">
-                <h3>150+</h3>
-                <p>Expert Instructors</p>
-            </div>
-            <div class="stat-item">
-                <h3>95%</h3>
-                <p>Success Rate</p>
+            <div style="flex: 1 1 350px; min-width: 300px; display: flex; justify-content: center;">
+                <img src="https://via.placeholder.com/350x220?text=About+VedraLearn+Technologies" alt="About VedraLearn Technologies" style="width: 100%; max-width: 350px; border-radius: 1.2rem; box-shadow: 0 4px 24px rgba(0,114,255,0.09);">
             </div>
         </div>
     </section>
+
+
+
+    <!-- All legacy/duplicate sections removed for a clean, modern layout. -->
+
+
 
     <!-- Features Section -->
     <section class="features" id="features">
         <div class="features-container">
-            <h2 class="section-title">Why Vedra Learn Technologies?</h2>
-            <p class="section-subtitle">Experience learning tailored to your needs with cutting-edge technology and expert mentorship</p>
+            <h2 class="section-title">Why Choose Vedra Learn?</h2>
+            <p class="section-subtitle">We bridge the gap between academic learning and industry needs through real internships, live projects, and expert mentorship.</p>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Career-Ready Content</h3>
-                    <p>Curriculum designed with industry leaders ensuring you learn what employers actually need. Every course is updated quarterly.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">👨‍🏫</div>
-                    <h3>Expert Instructors</h3>
-                    <p>Learn directly from professionals working at Fortune 500 companies with average 15+ years of industry experience.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⏱️</div>
-                    <h3>Learn Anytime, Anywhere</h3>
-                    <p>Lifetime access to course materials. Study at your own pace, on any device, with flexible completion timelines.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🏆</div>
-                    <h3>Verified Certificates</h3>
-                    <p>Earn industry-recognized certificates that showcase your skills to employers. Add them directly to LinkedIn.</p>
-                </div>
-                <div class="feature-card">
                     <div class="feature-icon">💼</div>
-                    <h3>Real-World Projects</h3>
-                    <p>Build a portfolio with practical projects. Work on actual business problems and create impressive work samples.</p>
+                    <h3>Internship Programs</h3>
+                    <p>Work on real company projects and gain practical experience that sets you apart in the job market.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧑‍💻</div>
+                    <h3>Live Project Experience</h3>
+                    <p>Collaborate with teams and mentors on real-world challenges, building a strong professional portfolio.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🤝</div>
-                    <h3>Active Community</h3>
-                    <p>Network with peers, discuss challenges, share experiences in our vibrant community forums and live sessions.</p>
+                    <h3>Placement Support</h3>
+                    <p>Get guidance for interviews, resume building, and direct placement assistance from our career experts.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Vibrant Community</h3>
+                    <p>Join a growing network of interns, mentors, and alumni for support, networking, and growth.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📜</div>
+                    <h3>Verified Certificates</h3>
+                    <p>Receive certificates for every internship and project, recognized by industry partners and employers.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Skill Development</h3>
+                    <p>Sharpen your technical and soft skills with hands-on tasks, workshops, and expert feedback.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Courses Section -->
+    <!-- Internships Section -->
     <section class="courses" id="courses">
         <div class="courses-container">
-            <h2 class="section-title">Popular Learning Paths</h2>
+            <h2 class="section-title">Internships We Offer</h2>
             <div class="courses-grid">
                 <div class="course-card">
                     <div class="course-header">💻</div>
                     <div class="course-body">
-                        <span class="course-badge">BEGINNER</span>
-                        <h3>Full Stack Web Development</h3>
+                        <span class="course-badge">Web Development</span>
+                        <h3>Web Development Internship</h3>
                         <div class="course-meta">
-                            <span>12 weeks</span>
-                            <span>142 lessons</span>
+                            <span>4-8 weeks</span>
+                            <span>Live Projects</span>
                         </div>
-                        <p>Master modern web development with React, Node.js, and databases. Build complete web applications from scratch.</p>
-                        <button class="btn-course">Enroll Now</button>
+                        <p>Work on real client websites and web apps. Learn HTML, CSS, JavaScript, React, and backend basics.</p>
+                        <button class="btn-course">Apply Now</button>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-header">📱</div>
+                    <div class="course-body">
+                        <span class="course-badge">Android</span>
+                        <h3>Android Development Internship</h3>
+                        <div class="course-meta">
+                            <span>4-8 weeks</span>
+                            <span>Live Projects</span>
+                        </div>
+                        <p>Build mobile apps using Java/Kotlin. Get hands-on with UI/UX and Google Play deployment.</p>
+                        <button class="btn-course">Apply Now</button>
                     </div>
                 </div>
                 <div class="course-card">
                     <div class="course-header">📊</div>
                     <div class="course-body">
-                        <span class="course-badge">INTERMEDIATE</span>
-                        <h3>Data Science & Analytics</h3>
+                        <span class="course-badge">Data Science</span>
+                        <h3>Data Science Internship</h3>
                         <div class="course-meta">
-                            <span>10 weeks</span>
-                            <span>128 lessons</span>
+                            <span>4-8 weeks</span>
+                            <span>Live Projects</span>
                         </div>
-                        <p>Learn Python, SQL, and data visualization. Analyze datasets and create data-driven insights for business decisions.</p>
-                        <button class="btn-course">Enroll Now</button>
+                        <p>Analyze real datasets, use Python, and create data-driven solutions for business problems.</p>
+                        <button class="btn-course">Apply Now</button>
                     </div>
                 </div>
                 <div class="course-card">
-                    <div class="course-header">🎨</div>
+                    <div class="course-header">☕</div>
                     <div class="course-body">
-                        <span class="course-badge">BEGINNER</span>
-                        <h3>UI/UX Design Masterclass</h3>
+                        <span class="course-badge">Java</span>
+                        <h3>Java Programming Internship</h3>
                         <div class="course-meta">
-                            <span>8 weeks</span>
-                            <span>95 lessons</span>
+                            <span>4-8 weeks</span>
+                            <span>Live Projects</span>
                         </div>
-                        <p>Design beautiful user interfaces and experiences. Learn Figma, design thinking, and user research methodologies.</p>
-                        <button class="btn-course">Enroll Now</button>
+                        <p>Develop Java applications, learn OOP, and contribute to backend systems and APIs.</p>
+                        <button class="btn-course">Apply Now</button>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-header">🔢</div>
+                    <div class="course-body">
+                        <span class="course-badge">C++</span>
+                        <h3>C++ Programming Internship</h3>
+                        <div class="course-meta">
+                            <span>4-8 weeks</span>
+                            <span>Live Projects</span>
+                        </div>
+                        <p>Work on C++ projects, algorithms, and system-level programming with real-world applications.</p>
+                        <button class="btn-course">Apply Now</button>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-header">🐍</div>
+                    <div class="course-body">
+                        <span class="course-badge">Python</span>
+                        <h3>Python Programming Internship</h3>
+                        <div class="course-meta">
+                            <span>4-8 weeks</span>
+                            <span>Live Projects</span>
+                        </div>
+                        <p>Automate tasks, analyze data, and build Python-based solutions for real clients.</p>
+                        <button class="btn-course">Apply Now</button>
                     </div>
                 </div>
                 <div class="course-card">
                     <div class="course-header">🤖</div>
                     <div class="course-body">
-                        <span class="course-badge">ADVANCED</span>
-                        <h3>Machine Learning & AI</h3>
+                        <span class="course-badge">AI/ML</span>
+                        <h3>Artificial Intelligence & ML Internship</h3>
                         <div class="course-meta">
-                            <span>14 weeks</span>
-                            <span>156 lessons</span>
+                            <span>4-8 weeks</span>
+                            <span>Live Projects</span>
                         </div>
-                        <p>Build intelligent systems with ML algorithms. Deep learning, neural networks, and practical AI implementation.</p>
-                        <button class="btn-course">Enroll Now</button>
+                        <p>Work on AI/ML models, data pipelines, and deploy intelligent solutions with guidance from experts.</p>
+                        <button class="btn-course">Apply Now</button>
                     </div>
                 </div>
                 <div class="course-card">
-                    <div class="course-header">☁️</div>
+                    <div class="course-header">🎨</div>
                     <div class="course-body">
-                        <span class="course-badge">INTERMEDIATE</span>
-                        <h3>Cloud & DevOps Engineering</h3>
+                        <span class="course-badge">UI/UX</span>
+                        <h3>UI/UX Design Internship</h3>
                         <div class="course-meta">
-                            <span>10 weeks</span>
-                            <span>119 lessons</span>
+                            <span>4-8 weeks</span>
+                            <span>Live Projects</span>
                         </div>
-                        <p>Master AWS, Docker, and Kubernetes. Deploy applications at scale with modern DevOps practices.</p>
-                        <button class="btn-course">Enroll Now</button>
-                    </div>
-                </div>
-                <div class="course-card">
-                    <div class="course-header">💼</div>
-                    <div class="course-body">
-                        <span class="course-badge">INTERMEDIATE</span>
-                        <h3>Digital Marketing Strategy</h3>
-                        <div class="course-meta">
-                            <span>6 weeks</span>
-                            <span>87 lessons</span>
-                        </div>
-                        <p>Learn SEO, social media, content marketing, and analytics. Create data-driven marketing campaigns.</p>
-                        <button class="btn-course">Enroll Now</button>
+                        <p>Design user interfaces, conduct research, and create engaging user experiences for real products.</p>
+                        <button class="btn-course">Apply Now</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section class="pricing" id="pricing">
-        <div class="pricing-container">
-            <h2 class="section-title">Flexible Pricing Plans</h2>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Starter</h3>
-                    <div class="price">$29<span style="font-size: 0.6em;">/month</span></div>
-                    <p class="price-period">Perfect for beginners</p>
-                    <ul class="pricing-features">
-                        <li>50+ Courses Access</li>
-                        <li>Basic Certificates</li>
-                        <li>Community Forum</li>
-                        <li>Email Support</li>
-                        <li>Mobile Access</li>
-                    </ul>
-                    <button class="btn-pricing">Get Started</button>
-                </div>
-                <div class="pricing-card featured">
-                    <div class="pricing-badge">MOST POPULAR</div>
-                    <h3>Professional</h3>
-                    <div class="price">$79<span style="font-size: 0.6em;">/month</span></div>
-                    <p class="price-period">Best for career growth</p>
-                    <ul class="pricing-features">
-                        <li>All 200+ Courses</li>
-                        <li>Verified Certificates</li>
-                        <li>Priority Support</li>
-                        <li>1-on-1 Mentoring</li>
-                        <li>Projects & Portfolio</li>
-                    </ul>
-                    <button class="btn-pricing">Choose Plan</button>
-                </div>
-                <div class="pricing-card">
-                    <h3>Enterprise</h3>
-                    <div class="price">Custom</div>
-                    <p class="price-period">For organizations</p>
-                    <ul class="pricing-features">
-                        <li>Team Licensing</li>
-                        <li>Custom Training</li>
-                        <li>Dedicated Manager</li>
-                        <li>API Access</li>
-                        <li>Analytics Dashboard</li>
-                    </ul>
-                    <button class="btn-pricing">Contact Sales</button>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-        <div class="testimonials-container">
-            <h2 class="section-title">What Learners Achieve</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <img src="images/dp.png" alt="Arjun Verma" class="testimonial-image">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"I landed my dream job as a web developer 3 months after completing the Full Stack course. The instructors are amazing and the projects were exactly what companies want to see!"</p>
-                    <p class="testimonial-author">Arjun Verma</p>
-                    <p class="testimonial-role">Full Stack Developer at TechCorp</p>
+    <section class="testimonials" id="testimonials" style="background: #f4f7fb; padding: 4rem 0;">
+        <div class="testimonials-container" style="max-width: 1100px; margin: 0 auto;">
+            <h2 class="section-title" style="text-align:center; font-size:2.1rem; font-weight:800; color:#0072ff; margin-bottom:2.2rem;">What Learners Achieve</h2>
+            <div class="testimonials-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem;">
+                <div class="testimonial-card" style="background: #fff; border-radius: 1.1rem; box-shadow: 0 2px 12px rgba(0,114,255,0.06); padding: 2.2rem 1.5rem; text-align: center;">
+                    <img src="images/dp.png" alt="Arjun Verma" class="testimonial-image" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
+                    <div class="stars" style="color: #fbbf24; font-size: 1.2rem; margin-bottom: 1rem; letter-spacing: 2px;">★★★★★</div>
+                    <p class="testimonial-text" style="color: #666; margin-bottom: 1.5rem; font-style: italic; line-height: 1.7; font-size: 0.95rem;">"I landed my dream job as a web developer 3 months after completing the Full Stack course. The instructors are amazing and the projects were exactly what companies want to see!"</p>
+                    <p class="testimonial-author" style="font-weight: 600; color: #1f2937; font-size: 0.95rem;">Arjun Verma</p>
+                    <p class="testimonial-role" style="color: #888; font-size: 0.85rem; margin-top: 0.3rem;">Full Stack Developer at TechCorp</p>
                 </div>
-                <div img src="images/dp.png" alt="Sneha Patel" class="testimonial-image">
-                    <class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"The Data Science course completely changed my career trajectory. I went from a marketing role to becoming a data analyst. Best investment I ever made!"</p>
-                    <p class="testimonial-author">Sneha Patel</p>
-                    <p class="testimonial-role">Data Analyst at Analytics Pro</p>
+                <div class="testimonial-card" style="background: #fff; border-radius: 1.1rem; box-shadow: 0 2px 12px rgba(0,114,255,0.06); padding: 2.2rem 1.5rem; text-align: center;">
+                    <img src="images/dp.png" alt="Sneha Patel" class="testimonial-image" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
+                    <div class="stars" style="color: #fbbf24; font-size: 1.2rem; margin-bottom: 1rem; letter-spacing: 2px;">★★★★★</div>
+                    <p class="testimonial-text" style="color: #666; margin-bottom: 1.5rem; font-style: italic; line-height: 1.7; font-size: 0.95rem;">"The Data Science course completely changed my career trajectory. I went from a marketing role to becoming a data analyst. Best investment I ever made!"</p>
+                    <p class="testimonial-author" style="font-weight: 600; color: #1f2937; font-size: 0.95rem;">Sneha Patel</p>
+                    <p class="testimonial-role" style="color: #888; font-size: 0.85rem; margin-top: 0.3rem;">Data Analyst at Analytics Pro</p>
                 </div>
-                <div img src="images/dp.png" alt="Vikram Singh" class="testimonial-image">
-                    <class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"Started freelancing with UI/UX skills I learned here. Now earning 5x my previous salary. The community support and mentorship made all the difference!"</p>
-                    <p class="testimonial-author">Vikram Singh</p>
-                    <p class="testimonial-role">Independent UX Designer</p>
+                <div class="testimonial-card" style="background: #fff; border-radius: 1.1rem; box-shadow: 0 2px 12px rgba(0,114,255,0.06); padding: 2.2rem 1.5rem; text-align: center;">
+                    <img src="images/dp.png" alt="Vikram Singh" class="testimonial-image" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
+                    <div class="stars" style="color: #fbbf24; font-size: 1.2rem; margin-bottom: 1rem; letter-spacing: 2px;">★★★★★</div>
+                    <p class="testimonial-text" style="color: #666; margin-bottom: 1.5rem; font-style: italic; line-height: 1.7; font-size: 0.95rem;">"Started freelancing with UI/UX skills I learned here. Now earning 5x my previous salary. The community support and mentorship made all the difference!"</p>
+                    <p class="testimonial-author" style="font-weight: 600; color: #1f2937; font-size: 0.95rem;">Vikram Singh</p>
+                    <p class="testimonial-role" style="color: #888; font-size: 0.85rem; margin-top: 0.3rem;">Independent UX Designer</p>
                 </div>
             </div>
         </div>
@@ -1033,7 +1016,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Vedra Learn Technologies. All rights reserved. Transforming education through technology.</p>
+            <p>&copy; 2026 VedraLearn Technologies. All rights reserved. Transforming education through technology.</p>
         </div>
     </footer>
 </body>
