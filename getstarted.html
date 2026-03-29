@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started - VedraLearn Technologies</title>
+    <style>
+        /* ===== CSS VARIABLES ===== */
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary-color: #1f2937;
+            --text-body: #666666;
+            --text-light: #888888;
+            --bg-white: #ffffff;
+            --bg-light: #f3f4f6;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+            
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 2.5rem;
+            --spacing-2xl: 3rem;
+            --spacing-3xl: 4rem;
+            
+            --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* ===== BASE MOBILE-FIRST STYLES (320px) ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--secondary-color);
+            background-color: var(--bg-white);
+        }
+
+        /* ===== HEADER & NAVIGATION (Mobile-First) ===== */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-sm) var(--spacing-sm);
+            max-width: 1400px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: var(--spacing-xs);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .logo-img {
+            height: 35px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            letter-spacing: -0.5px;
+        }
+
+        nav ul {
+            display: none;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-body);
+            font-weight: 500;
+            font-size: 0.65rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 0.3rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-login,
+        .btn-signup {
+            padding: 0.4rem 0.6rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.6rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            border: none;
+        }
+
+        .btn-login {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 1.5px solid var(--primary-color);
+        }
+
+        .btn-login:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-signup {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-signup:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* ===== HERO SECTION (Mobile-First) ===== */
+        .hero {
+            background: linear-gradient(135deg, #e3eafc 0%, #f7fafc 100%);
+            padding: var(--spacing-lg) var(--spacing-sm);
+            text-align: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 0.8rem;
+            color: var(--text-body);
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+        }
+
+        /* ===== INTERNSHIPS SECTION (Mobile-First) ===== */
+        .internships-section {
+            padding: var(--spacing-md) var(--spacing-sm);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+
+        .internships-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .internship-card {
+            background-color: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .internship-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+            border-color: var(--primary-color);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .card-body {
+            padding: var(--spacing-sm);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: var(--primary-color);
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            width: fit-content;
+        }
+
+        .card-body h3 {
+            font-size: 1rem;
+            margin-bottom: 0.6rem;
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            margin: 0.6rem 0;
+            font-size: 0.7rem;
+            color: var(--text-light);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.6rem 0;
+        }
+
+        .card-body p {
+            color: var(--text-body);
+            margin-bottom: var(--spacing-sm);
+            flex: 1;
+            font-size: 0.8rem;
+            line-height: 1.5;
+        }
+
+        .btn-apply {
+            width: 100%;
+            padding: 0.65rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            font-size: 0.8rem;
+        }
+
+        .btn-apply:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* ===== CTA SECTION (Mobile-First) ===== */
+        .cta {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: var(--spacing-md);
+            text-align: center;
+            margin-top: var(--spacing-md);
+        }
+
+        .cta-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .cta p {
+            font-size: 0.8rem;
+            margin-bottom: var(--spacing-md);
+            opacity: 0.95;
+        }
+
+        .btn-cta {
+            background-color: white;
+            color: var(--primary-color);
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-cta:hover {
+            background-color: var(--bg-light);
+            transform: scale(1.03);
+        }
+
+        /* ===== FOOTER (Mobile-First) ===== */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: var(--spacing-md);
+            text-align: center;
+            margin-top: var(--spacing-md);
+        }
+
+        footer p {
+            font-size: 0.7rem;
+            margin-bottom: 0.5rem;
+            color: #9ca3af;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.7rem;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--primary-dark);
+        }
+
+        /* ===== MEDIA QUERIES (Progressive Enhancement) ===== */
+        @media (min-width: 480px) {
+            nav {
+                padding: var(--spacing-sm) var(--spacing-md);
+                gap: var(--spacing-sm);
+            }
+
+            .logo-img {
+                height: 38px;
+            }
+
+            .logo-text {
+                font-size: 0.9rem;
+            }
+
+            nav a {
+                font-size: 0.75rem;
+            }
+
+            .btn-login,
+            .btn-signup {
+                padding: 0.5rem 0.8rem;
+                font-size: 0.7rem;
+            }
+
+            .hero {
+                padding: var(--spacing-lg) var(--spacing-md);
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .internships-section {
+                padding: var(--spacing-lg) var(--spacing-md);
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .internships-grid {
+                gap: var(--spacing-lg);
+            }
+
+            .card-header {
+                height: 120px;
+                font-size: 2.8rem;
+            }
+
+            .card-body {
+                padding: var(--spacing-md);
+            }
+
+            .card-body h3 {
+                font-size: 1.1rem;
+            }
+
+            .cta h2 {
+                font-size: 1.5rem;
+            }
+
+            .cta p {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            nav {
+                padding: var(--spacing-sm) var(--spacing-lg);
+                flex-wrap: nowrap;
+                gap: var(--spacing-md);
+            }
+
+            /* Show Desktop Navigation */
+            nav ul {
+                display: flex;
+            }
+
+            .logo-img {
+                height: 45px;
+            }
+
+            .logo-text {
+                font-size: 1.3rem;
+            }
+
+            nav a {
+                font-size: 0.95rem;
+            }
+
+            .btn-login,
+            .btn-signup {
+                padding: 0.65rem 1.2rem;
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                padding: var(--spacing-2xl) var(--spacing-lg);
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .internships-section {
+                padding: var(--spacing-2xl) var(--spacing-lg);
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+                margin-bottom: var(--spacing-2xl);
+            }
+
+            .internships-grid {
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: var(--spacing-lg);
+            }
+
+            .card-header {
+                height: 160px;
+                font-size: 3.5rem;
+            }
+
+            .card-body {
+                padding: var(--spacing-lg);
+            }
+
+            .badge {
+                padding: 0.3rem 0.8rem;
+                font-size: 0.8rem;
+                margin-bottom: 1rem;
+            }
+
+            .card-body h3 {
+                font-size: 1.3rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .card-meta {
+                font-size: 0.85rem;
+                padding: 0.8rem 0;
+                margin: 1rem 0;
+            }
+
+            .card-body p {
+                font-size: 0.95rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .btn-apply {
+                padding: 0.85rem;
+                font-size: 0.95rem;
+            }
+
+            .cta {
+                padding: var(--spacing-2xl);
+            }
+
+            .cta h2 {
+                font-size: 2.2rem;
+                margin-bottom: 1rem;
+            }
+
+            .cta p {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .btn-cta {
+                padding: 0.85rem 2rem;
+                font-size: 0.95rem;
+            }
+
+            footer {
+                padding: var(--spacing-2xl);
+            }
+
+            footer p {
+                font-size: 0.9rem;
+            }
+
+            .back-link {
+                font-size: 0.9rem;
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            nav {
+                padding: var(--spacing-sm) var(--spacing-2xl);
+            }
+        }
+    </style>
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            width: fit-content;
+        }
+
+        .card-body h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: #1f2937;
+            font-weight: 600;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            margin: 1rem 0;
+            font-size: 0.85rem;
+            color: #888;
+            border-top: 1px solid #e5e7eb;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 0.8rem 0;
+        }
+
+        .card-body p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            flex: 1;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .btn-apply {
+            width: 100%;
+            padding: 0.85rem;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .btn-apply:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: white;
+            padding: 3rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .cta-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .cta p {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .btn-cta {
+            background-color: white;
+            color: #2563eb;
+            padding: 0.85rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-cta:hover {
+            background-color: #f3f4f6;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1f2937;
+            color: white;
+            padding: 3rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #1d4ed8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-buttons {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .internships-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cta h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            html {
+                scroll-behavior: smooth;
+            }
+
+            nav {
+                padding: 0.6rem 0.8rem;
+                flex-direction: row;
+                gap: 0.4rem;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .logo-section {
+                gap: 0.3rem;
+            }
+
+            .logo-img {
+                height: 35px;
+                width: auto;
+            }
+
+            .logo-text {
+                font-size: 0.8rem;
+                font-weight: 700;
+                color: #1f2937;
+                letter-spacing: -0.5px;
+            }
+
+            nav ul {
+                gap: 0.5rem;
+                flex-direction: row;
+                text-align: center;
+                font-size: 0.6rem;
+                display: none;
+            }
+
+            nav a {
+                text-decoration: none;
+                color: #555;
+                font-weight: 500;
+                font-size: 0.65rem;
+                transition: color 0.3s ease;
+            }
+
+            .nav-buttons {
+                width: auto;
+                justify-content: flex-end;
+                gap: 0.3rem;
+            }
+
+            .btn-login {
+                background-color: transparent;
+                color: #2563eb;
+                padding: 0.4rem 0.6rem;
+                border: 1.5px solid #2563eb;
+                border-radius: 4px;
+                cursor: pointer;
+                font-weight: 600;
+                font-size: 0.6rem;
+                transition: all 0.3s ease;
+                text-decoration: none;
+                display: inline-block;
+            }
+
+            .btn-login:hover {
+                background-color: #2563eb;
+                color: white;
+            }
+
+            .btn-signup {
+                background-color: #2563eb;
+                color: white;
+                padding: 0.4rem 0.7rem;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-weight: 600;
+                font-size: 0.6rem;
+                transition: background-color 0.3s ease;
+                text-decoration: none;
+                display: inline-block;
+            }
+
+            .btn-signup:hover {
+                background-color: #1d4ed8;
+            }
+
+            /* Hero Section */
+            .hero {
+                background: linear-gradient(135deg, #e3eafc 0%, #f7fafc 100%);
+                padding: 2rem 1rem;
+                text-align: center;
+                max-width: 1400px;
+                margin: 0 auto;
+            }
+
+            .hero h1 {
+                font-size: 1.3rem;
+                margin-bottom: 0.8rem;
+                color: #1f2937;
+                font-weight: 700;
+            }
+
+            .hero p {
+                font-size: 0.8rem;
+                color: #666;
+                max-width: 700px;
+                margin: 0 auto 1.5rem;
+            }
+
+            /* Internships Grid */
+            .internships-section {
+                padding: 1.5rem 1rem;
+                max-width: 1400px;
+                margin: 0 auto;
+            }
+
+            .section-title {
+                text-align: center;
+                font-size: 1.3rem;
+                margin-bottom: 1.5rem;
+                color: #1f2937;
+                font-weight: 700;
+            }
+
+            .internships-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .internship-card {
+                background-color: #ffffff;
+                border: 1px solid #e5e7eb;
+                border-radius: 6px;
+                overflow: hidden;
+                transition: all 0.3s ease;
+                display: flex;
+                flex-direction: column;
+                box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+            }
+
+            .internship-card:hover {
+                box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+                transform: translateY(-2px);
+                border-color: #2563eb;
+            }
+
+            .card-header {
+                background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+                height: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 2.5rem;
+                font-weight: bold;
+            }
+
+            .card-body {
+                padding: 1rem;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .badge {
+                display: inline-block;
+                background-color: #dbeafe;
+                color: #2563eb;
+                padding: 0.2rem 0.6rem;
+                border-radius: 20px;
+                font-size: 0.65rem;
+                font-weight: 600;
+                margin-bottom: 0.6rem;
+                width: fit-content;
+            }
+
+            .card-body h3 {
+                font-size: 1rem;
+                margin-bottom: 0.6rem;
+                color: #1f2937;
+                font-weight: 600;
+            }
+
+            .card-meta {
+                display: flex;
+                justify-content: space-between;
+                margin: 0.6rem 0;
+                font-size: 0.7rem;
+                color: #888;
+                border-top: 1px solid #e5e7eb;
+                border-bottom: 1px solid #e5e7eb;
+                padding: 0.6rem 0;
+            }
+
+            .card-body p {
+                color: #666;
+                margin-bottom: 1rem;
+                flex: 1;
+                font-size: 0.8rem;
+                line-height: 1.5;
+            }
+
+            .btn-apply {
+                width: 100%;
+                padding: 0.65rem;
+                background-color: #2563eb;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-weight: 600;
+                transition: background-color 0.3s ease;
+                font-size: 0.8rem;
+            }
+
+            .btn-apply:hover {
+                background-color: #1d4ed8;
+            }
+
+            /* CTA Section */
+            .cta {
+                background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+                color: white;
+                padding: 1.5rem 1rem;
+                text-align: center;
+                margin-top: 1.5rem;
+            }
+
+            .cta-container {
+                max-width: 900px;
+                margin: 0 auto;
+            }
+
+            .cta h2 {
+                font-size: 1.2rem;
+                margin-bottom: 0.8rem;
+                font-weight: 700;
+            }
+
+            .cta p {
+                font-size: 0.8rem;
+                margin-bottom: 1.2rem;
+                opacity: 0.95;
+            }
+
+            .btn-cta {
+                background-color: white;
+                color: #2563eb;
+                padding: 0.6rem 1.2rem;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-weight: 600;
+                font-size: 0.8rem;
+                transition: all 0.3s ease;
+            }
+
+            .btn-cta:hover {
+                background-color: #f3f4f6;
+                transform: scale(1.03);
+            }
+
+            /* Footer */
+            footer {
+                background-color: #1f2937;
+                color: white;
+                padding: 1.5rem 1rem;
+                text-align: center;
+                font-size: 0.75rem;
+            }
+
+            footer p {
+                font-size: 0.7rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .back-link {
+                font-size: 0.7rem;
+                display: inline-block;
+                margin-bottom: 0.5rem;
+            }
+
+            .back-link:hover {
+                color: #1d4ed8;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header>
+        <nav style="max-width: 1300px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 2.5rem;">
+            <div style="display: flex; align-items: center; gap: 0.7rem;">
+                <img src="images/logo.png" alt="Vedra Learn" style="height: 42px; width: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,198,255,0.08);">
+                <span style="font-size: 1.35rem; font-weight: 800; color: #0a2540; letter-spacing: -1px;">VedraLearn Technologies</span>
+            </div>
+            <ul style="display: flex; gap: 2.2rem; list-style: none; align-items: center;">
+                <li><a href="index.html#home" style="color: #0a2540; font-weight: 600; text-decoration: none; font-size: 1rem;">Home</a></li>
+                <li><a href="index.html#about" style="color: #0a2540; font-weight: 600; text-decoration: none; font-size: 1rem;">About</a></li>
+                <li><a href="#internships" style="color: #0a2540; font-weight: 600; text-decoration: none; font-size: 1rem;">Internships</a></li>
+                <li><a href="index.html#community" style="color: #0a2540; font-weight: 600; text-decoration: none; font-size: 1rem;">Community</a></li>
+                <li><a href="index.html#contact" style="color: #0a2540; font-weight: 600; text-decoration: none; font-size: 1rem;">Contact</a></li>
+            </ul>
+            <div style="display: flex; gap: 0.7rem;">
+                <a href="login.html" style="background: #fff; color: #0072ff; font-weight: 700; border: 2px solid #0072ff; border-radius: 5px; padding: 0.6rem 1.3rem; font-size: 0.98rem; text-decoration: none;">Login</a>
+                <a href="getstarted.html" style="background: #0072ff; color: #fff; font-weight: 700; border: none; border-radius: 5px; padding: 0.6rem 1.3rem; font-size: 0.98rem; text-decoration: none; box-shadow: 0 2px 8px rgba(0,114,255,0.08);">Get Started</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <a href="index.html" class="back-link">← Back to Home</a>
+        <h1>Explore Our Internship Programs</h1>
+        <p>Launch your career with real-world experience. Choose from our diverse range of internships across different technologies and industries. Get hands-on training, mentorship, and industry credentials.</p>
+    </section>
+
+    <!-- Internships Section -->
+    <section class="internships-section" id="internships">
+        <h2 class="section-title">All Available Internships</h2>
+        <div class="internships-grid">
+            <div class="internship-card">
+                <div class="card-header">💻</div>
+                <div class="card-body">
+                    <span class="badge">Web Development</span>
+                    <h3>Web Development Internship</h3>
+                    <div class="card-meta">
+                        <span>4-8 weeks</span>
+                        <span>Live Projects</span>
+                    </div>
+                    <p>Work on real client websites and web apps. Learn HTML, CSS, JavaScript, React, and backend basics. Build a professional portfolio with production-ready projects.</p>
+                    <button class="btn-apply" onclick="alert('Please login or sign up to apply')">Apply Now</button>
+                </div>
+            </div>
+
+            <div class="internship-card">
+                <div class="card-header">📱</div>
+                <div class="card-body">
+                    <span class="badge">Android</span>
+                    <h3>Android Development Internship</h3>
+                    <div class="card-meta">
+                        <span>4-8 weeks</span>
+                        <span>Live Projects</span>
+                    </div>
+                    <p>Build mobile apps using Java/Kotlin. Get hands-on with UI/UX design principles and Google Play Store deployment. Contribute to real mobile applications.</p>
+                    <button class="btn-apply" onclick="alert('Please login or sign up to apply')">Apply Now</button>
+                </div>
+            </div>
+
+            <div class="internship-card">
+                <div class="card-header">📊</div>
+                <div class="card-body">
+                    <span class="badge">Data Science</span>
+                    <h3>Data Science Internship</h3>
+                    <div class="card-meta">
+                        <span>4-8 weeks</span>
+                        <span>Live Projects</span>
+                    </div>
+                    <p>Analyze real datasets and create data-driven solutions for business problems. Learn Python, data visualization, machine learning basics, and statistical analysis.</p>
+                    <button class="btn-apply" onclick="alert('Please login or sign up to apply')">Apply Now</button>
+                </div>
+            </div>
+
+            <div class="internship-card">
+                <div class="card-header">☕</div>
+                <div class="card-body">
+                    <span class="badge">Java</span>
+                    <h3>Java Programming Internship</h3>
+                    <div class="card-meta">
+                        <span>4-8 weeks</span>
+                        <span>Live Projects</span>
+                    </div>
+                    <p>Develop Java applications and learn object-oriented programming. Contribute to backend systems, APIs, and enterprise-level applications with expert guidance.</p>
+                    <button class="btn-apply" onclick="alert('Please login or sign up to apply')">Apply Now</button>
+                </div>
+            </div>
+
+            <div class="internship-card">
+                <div class="card-header">🔢</div>
+                <div class="card-body">
+                    <span class="badge">C++</span>
+                    <h3>C++ Programming Internship</h3>
+                    <div class="card-meta">
+                        <span>4-8 weeks</span>
+                        <span>Live Projects</span>
+                    </div>
+                    <p>Work on C++ projects focusing on algorithms, data structures, and system-level programming. Apply your skills to real-world applications and performance optimization.</p>
+                    <button class="btn-apply" onclick="alert('Please login or sign up to apply')">Apply Now</button>
+                </div>
+            </div>
+
+            <div class="internship-card">
+                <div class="card-header">🐍</div>
+                <div class="card-body">
+                    <span class="badge">Python</span>
+                    <h3>Python Programming Internship</h3>
+                    <div class="card-meta">
+                        <span>4-8 weeks</span>
+                        <span>Live Projects</span>
+                    </div>
+                    <p>Automate tasks, analyze data, and build Python-based solutions for real clients. Master web scraping, scripting, and automation with practical projects.</p>
+                    <button class="btn-apply" onclick="alert('Please login or sign up to apply')">Apply Now</button>
+                </div>
+            </div>
+
+            <div class="internship-card">
+                <div class="card-header">🤖</div>
+                <div class="card-body">
+                    <span class="badge">AI/ML</span>
+                    <h3>Artificial Intelligence & ML Internship</h3>
+                    <div class="card-meta">
+                        <span>4-8 weeks</span>
+                        <span>Live Projects</span>
+                    </div>
+                    <p>Work on AI/ML models and data pipelines. Deploy intelligent solutions using TensorFlow, PyTorch, and advanced ML techniques with expert mentorship.</p>
+                    <button class="btn-apply" onclick="alert('Please login or sign up to apply')">Apply Now</button>
+                </div>
+            </div>
+
+            <div class="internship-card">
+                <div class="card-header">🎨</div>
+                <div class="card-body">
+                    <span class="badge">UI/UX</span>
+                    <h3>UI/UX Design Internship</h3>
+                    <div class="card-meta">
+                        <span>4-8 weeks</span>
+                        <span>Live Projects</span>
+                    </div>
+                    <p>Design user interfaces and conduct user research. Create engaging user experiences for real products using design tools and best practices.</p>
+                    <button class="btn-apply" onclick="alert('Please login or sign up to apply')">Apply Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-container">
+            <h2>Ready to Start Your Internship?</h2>
+            <p>Join thousands of students who have launched their careers through our internship programs. Get mentorship, real experience, and industry recognition.</p>
+            <a href="login.html" class="btn-cta">Login to Apply</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 VedraLearn Technologies. All rights reserved. Transforming education through technology.</p>
+    </footer>
+</body>
+</html>

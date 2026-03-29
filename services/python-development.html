@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Development - VedraLearn Technologies</title>
+    <style>
+        /* ===== CSS VARIABLES (Python Development - Cyan Brand) ===== */
+        :root {
+            --primary-color: #06b6d4;
+            --primary-dark: #0891b2;
+            --secondary-color: #0a2540;
+            --accent-color: #06b6d4;
+            --bg-white: #ffffff;
+            --bg-light: #f8f9fa;
+            --bg-gradient1: #cffafe;
+            --bg-gradient2: #c7d2fe;
+            --text-body: #666666;
+            --text-light: #9ca3af;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 20px rgba(6, 182, 212, 0.1);
+            
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 2.5rem;
+            --spacing-2xl: 3rem;
+            --spacing-3xl: 4rem;
+            
+            --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* ===== BASE MOBILE-FIRST STYLES (320px) ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--secondary-color);
+            background-color: var(--bg-light);
+        }
+
+        /* ===== HEADER & NAVIGATION (Mobile-First) ===== */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.6rem 1rem;
+            flex-wrap: wrap;
+            gap: var(--spacing-xs);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .logo-img {
+            height: 30px;
+            width: auto;
+            border-radius: 4px;
+        }
+
+        .logo-text {
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.75rem;
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--primary-dark);
+        }
+
+        /* ===== HERO SECTION (Mobile-First) ===== */
+        .hero {
+            background: linear-gradient(135deg, var(--bg-gradient1) 0%, var(--bg-gradient2) 100%);
+            padding: var(--spacing-lg) 1rem;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 0.8rem;
+            color: var(--text-body);
+            margin-bottom: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .hero-cta {
+            font-size: 0.75rem;
+            padding: 0.6rem 1rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .animated-svg {
+            width: 100%;
+            max-width: 280px;
+            height: auto;
+        }
+
+        /* ===== CONTENT SECTION (Mobile-First) ===== */
+        .content-section {
+            max-width: 1200px;
+            margin: var(--spacing-lg) auto;
+            padding: 0 1rem;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .feature-card {
+            background: var(--bg-white);
+            padding: 1.2rem;
+            border-radius: 6px;
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card h3 {
+            font-size: 1rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.6rem;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            color: var(--text-body);
+            font-size: 0.75rem;
+            line-height: 1.5;
+        }
+
+        /* ===== CONTACT SECTION (Mobile-First) ===== */
+        .contact-section {
+            background: white;
+            padding: var(--spacing-lg) 1rem;
+            border-radius: 8px;
+            max-width: 900px;
+            margin: var(--spacing-lg) auto;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .contact-section p {
+            font-size: 0.8rem;
+            color: var(--text-body);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .email-box {
+            background: linear-gradient(135deg, #cffafe 0%, #c7d2fe 100%);
+            padding: var(--spacing-md);
+            border-radius: 6px;
+            margin-bottom: var(--spacing-md);
+            border: 2px solid #a5f3fc;
+        }
+
+        .email-box a {
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            text-decoration: none;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .email-box a:hover {
+            color: #0891b2;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.7rem 1.2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            margin-top: var(--spacing-sm);
+        }
+
+        .cta-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* ===== FOOTER (Mobile-First) ===== */
+        footer {
+            background-color: #1f2937;
+            color: white;
+            padding: var(--spacing-md);
+            text-align: center;
+            margin-top: var(--spacing-lg);
+        }
+
+        footer p {
+            color: var(--text-light);
+            font-size: 0.7rem;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes snake-wiggle {
+            0%, 100% { transform: rotate(-2deg); }
+            50% { transform: rotate(2deg); }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .wiggling {
+            animation: snake-wiggle 2s ease-in-out infinite;
+        }
+
+        /* ===== MEDIA QUERIES (Progressive Enhancement) ===== */
+        @media (min-width: 480px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .logo-img {
+                height: 35px;
+            }
+
+            .logo-text {
+                font-size: 1rem;
+            }
+
+            .back-link {
+                font-size: 0.8rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero {
+                padding: var(--spacing-xl) var(--spacing-md);
+            }
+
+            .hero-text h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero-text p {
+                font-size: 0.9rem;
+            }
+
+            .animated-svg {
+                max-width: 300px;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .features-grid {
+                gap: var(--spacing-lg);
+            }
+
+            .feature-card {
+                padding: var(--spacing-md);
+            }
+
+            .feature-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .feature-card p {
+                font-size: 0.85rem;
+            }
+
+            .contact-section {
+                padding: var(--spacing-xl) var(--spacing-md);
+            }
+
+            .contact-section h2 {
+                font-size: 1.6rem;
+            }
+
+            .email-box {
+                padding: var(--spacing-lg);
+            }
+
+            .email-box a {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            nav {
+                padding: 1.2rem 2.5rem;
+            }
+
+            .logo-img {
+                height: 42px;
+            }
+
+            .logo-text {
+                font-size: 1.2rem;
+            }
+
+            .back-link {
+                font-size: 0.9rem;
+                margin-bottom: 2rem;
+            }
+
+            .hero {
+                padding: var(--spacing-3xl) var(--spacing-lg);
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--spacing-2xl);
+            }
+
+            .hero-text h1 {
+                font-size: 2.8rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-text p {
+                font-size: 1.1rem;
+                margin-bottom: 2rem;
+            }
+
+            .animated-svg {
+                max-width: 350px;
+            }
+
+            .content-section {
+                padding: 0 var(--spacing-lg);
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+
+            .feature-card {
+                padding: var(--spacing-lg);
+            }
+
+            .feature-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .feature-card p {
+                font-size: 0.95rem;
+            }
+
+            .contact-section {
+                padding: var(--spacing-2xl);
+            }
+
+            .contact-section h2 {
+                font-size: 2rem;
+            }
+
+            .contact-section p {
+                font-size: 1rem;
+            }
+
+            .email-box {
+                padding: 2rem;
+                display: inline-block;
+            }
+
+            .email-box a {
+                font-size: 1.4rem;
+            }
+
+            .cta-button {
+                padding: 1rem 2.5rem;
+                font-size: 1rem;
+            }
+
+            footer {
+                padding: 2rem;
+            }
+
+            footer p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            nav {
+                padding: 1.2rem 2.5rem;
+            }
+
+            .content-section {
+                padding: 0 var(--spacing-2xl);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo-section">
+                <img src="../images/logo.png" alt="VedraLearn" class="logo-img">
+                <span class="logo-text">VedraLearn</span>
+            </div>
+            <a href="../index.html" class="back-link" style="margin-bottom: 0;">← Back to Home</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Python Development</h1>
+                <p>Master Python programming language and build powerful applications for web, data science, automation, and backend systems.</p>
+                <p style="font-size: 0.95rem; color: #888;">From basics to advanced web frameworks, data analysis, and machine learning integration.</p>
+            </div>
+            <div class="hero-image">
+                <svg class="animated-svg floating" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#0891b2;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <!-- Python Snake SVG -->
+                    <g class="wiggling" transform="translate(100,100)">
+                        <!-- Snake head -->
+                        <circle cx="0" cy="-35" r="12" fill="url(#grad1)"/>
+                        <!-- Eyes -->
+                        <circle cx="-4" cy="-38" r="2" fill="white"/>
+                        <circle cx="4" cy="-38" r="2" fill="white"/>
+                        <!-- Snake body curve -->
+                        <path d="M 0 -23 Q -15 -10 -12 10 Q -10 25 5 28" stroke="url(#grad1)" stroke-width="10" fill="none" stroke-linecap="round"/>
+                        <!-- More body -->
+                        <path d="M 5 28 Q 18 30 20 15 Q 22 2 10 -5" stroke="url(#grad1)" stroke-width="8" fill="none" stroke-linecap="round"/>
+                    </g>
+                    <!-- Decorative circles -->
+                    <circle cx="50" cy="40" r="8" fill="url(#grad1)" opacity="0.4"/>
+                    <circle cx="140" cy="60" r="6" fill="url(#grad1)" opacity="0.3"/>
+                    <circle cx="70" cy="130" r="7" fill="url(#grad1)" opacity="0.35"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <h2 class="section-title">What You'll Learn</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Core Python</h3>
+                <p>Fundamentals, data types, control flow, functions, OOP, modules, exception handling, and best practices.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Web Development</h3>
+                <p>Flask, Django, FastAPI frameworks, REST APIs, database integration, authentication, and deployment.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Data Science</h3>
+                <p>NumPy, Pandas, Matplotlib, Seaborn for data manipulation, analysis, visualization, and insights.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Automation & Scripting</h3>
+                <p>Process automation, file handling, APIs integration, scheduling tasks, web scraping, and system scripts.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Testing & Debugging</h3>
+                <p>Unit testing with pytest, debugging techniques, code quality tools, logging, profiling, and optimization.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Real-world Projects</h3>
+                <p>Build portfolio projects, e-commerce systems, data dashboards, chatbots, and production-ready applications.</p>
+            </div>
+        </div>
+
+        <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); margin-bottom: 2rem;">
+            <h3 style="font-size: 1.3rem; font-weight: 700; color: #0a2540; margin-bottom: 1rem;">Program Highlights</h3>
+            <ul style="list-style: none; color: #666;">
+                <li style="padding: 0.5rem 0;">✓ 6-8 week comprehensive program</li>
+                <li style="padding: 0.5rem 0;">✓ Industry-standard libraries and frameworks</li>
+                <li style="padding: 0.5rem 0;">✓ 8+ capstone projects included</li>
+                <li style="padding: 0.5rem 0;">✓ Mentorship from senior developers</li>
+                <li style="padding: 0.5rem 0;">✓ Career guidance and job preparation</li>
+                <li style="padding: 0.5rem 0;">✓ Lifetime access to course materials</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <h2>Ready to Master Python?</h2>
+        <p>Join our Python Development program and become a skilled developer. Contact us to get started today!</p>
+        
+        <div class="email-box">
+            <p style="margin-bottom: 0.5rem; color: #666;">📧 Email Us</p>
+            <a href="mailto:info@vedralearn.online">info@vedralearn.online</a>
+            <p style="font-size: 0.9rem; color: #888; margin-top: 0.5rem;">We respond within 24 hours</p>
+        </div>
+
+        <a href="../getstarted.html" class="cta-button">Explore All Programs</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 VedraLearn Technologies. All rights reserved.</p>
+    </footer>
+</body>
+</html>

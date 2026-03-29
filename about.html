@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About VedraLearn Technologies - Learn More About Us</title>
+    <style>
+        /* ===== CSS VARIABLES ===== */
+        :root {
+            /* Colors */
+            --primary-color: #0072ff;
+            --secondary-color: #0a2540;
+            --accent-color: #2563eb;
+            --accent-alt-color: #4f46e5;
+            --accent-warning: #f59e0b;
+            --bg-white: #ffffff;
+            --bg-light: #f8f9fa;
+            --bg-lighter: #f3f4f6;
+            --bg-lightest: #f9fafb;
+            --text-dark: #0a2540;
+            --text-body: #555555;
+            --text-light: #999999;
+            --border-color: #f0f0f0;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 30px rgba(0, 114, 255, 0.15);
+            
+            /* Spacing (Mobile-first then scales up) */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 2.5rem;
+            --spacing-2xl: 3rem;
+            
+            /* Typography (Mobile-first scales) */
+            --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --font-size-sm: 0.9rem;
+            --font-size-base: 1rem;
+            --font-size-md: 1.05rem;
+            --font-size-lg: 1.35rem;
+            --font-size-xl: 1.5rem;
+            --font-size-2xl: 2rem;
+            --lh-tight: 1.2;
+            --lh-normal: 1.5;
+            --lh-relaxed: 1.8;
+        }
+
+        /* ===== BASE MOBILE-FIRST STYLES (320px) ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: var(--lh-normal);
+            color: var(--text-body);
+            background-color: var(--bg-light);
+            font-size: var(--font-size-base);
+        }
+
+        /* ===== HEADER & NAVIGATION (Mobile-First) ===== */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 0.8rem 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 var(--spacing-sm);
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            z-index: 102;
+        }
+
+        .logo-img {
+            height: 40px;
+            width: auto;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0, 114, 255, 0.1);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .logo-text {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            letter-spacing: -0.8px;
+        }
+
+        /* Desktop Navigation - Hidden on Mobile */
+        nav ul {
+            display: none;
+            list-style: none;
+            gap: 2.8rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: color 0.3s ease;
+            display: block;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .nav-buttons {
+            display: none;
+            gap: var(--spacing-sm);
+            align-items: center;
+        }
+
+        .btn-login {
+            background-color: transparent;
+            color: var(--primary-color);
+            padding: 0.6rem 1.2rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-login:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 114, 255, 0.3);
+        }
+
+        .btn-signup {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 2px 10px rgba(0, 114, 255, 0.2);
+        }
+
+        .btn-signup:hover {
+            background-color: #0056cc;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 114, 255, 0.3);
+        }
+
+        /* Mobile Menu Button (Hamburger) */
+        .mobile-menu-btn {
+            background: none;
+            border: none;
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            cursor: pointer;
+            z-index: 102;
+            padding: var(--spacing-xs);
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu-btn:hover {
+            color: var(--primary-color);
+        }
+
+        /* Mobile Menu Sidebar */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 85%;
+            max-width: 320px;
+            height: 100vh;
+            background: white;
+            box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+            z-index: 101;
+            transition: right 0.3s ease;
+            overflow-y: auto;
+            padding-top: 80px;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 99;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            padding: var(--spacing-sm);
+            margin: 0;
+        }
+
+        .mobile-menu li {
+            margin: 0;
+        }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 1.05rem;
+            display: block;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu a:hover {
+            background: var(--bg-lighter);
+            color: var(--primary-color);
+            padding-left: 2rem;
+        }
+
+        .mobile-menu-buttons {
+            padding: var(--spacing-md);
+            border-top: 2px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+
+        .mobile-menu-buttons .btn-login {
+            width: 100%;
+            padding: 0.8rem;
+            font-size: 1rem;
+        }
+
+        .mobile-menu-buttons .btn-signup {
+            width: 100%;
+            padding: 0.8rem;
+            font-size: 1rem;
+        }
+
+        /* ===== HERO SECTION (Mobile-First) ===== */
+        .hero {
+            background: linear-gradient(135deg, #e3eafc 0%, #f7fafc 100%);
+            padding: 2rem var(--spacing-sm) 1.5rem;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            animation: slide-up 0.8s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: var(--secondary-color);
+            margin-bottom: var(--spacing-md);
+            line-height: var(--lh-tight);
+        }
+
+        .hero p {
+            font-size: 0.9rem;
+            color: var(--text-body);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: var(--lh-relaxed);
+        }
+
+        /* ===== ABOUT SECTION (Mobile-First) ===== */
+        .about-section {
+            max-width: 1200px;
+            margin: -1.5rem auto var(--spacing-md);
+            padding: var(--spacing-md) var(--spacing-sm);
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            z-index: 10;
+            animation: slide-in 0.8s ease-out;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+            align-items: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .about-text h2 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .about-text p {
+            font-size: 0.9rem;
+            color: var(--text-body);
+            margin-bottom: var(--spacing-md);
+            line-height: var(--lh-relaxed);
+        }
+
+        .about-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 280px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-lg);
+            animation: float 3.5s ease-in-out infinite;
+        }
+
+        /* ===== LOGO GALLERY SECTION (Mobile-First) ===== */
+        .logo-section-about {
+            background: linear-gradient(135deg, #f3f4f6 0%, #f9fafb 100%);
+            padding: var(--spacing-md);
+            border-radius: 8px;
+            margin-bottom: var(--spacing-lg);
+            text-align: center;
+        }
+
+        .logo-section-about h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: var(--spacing-md);
+            animation: slide-up 0.6s ease-out;
+        }
+
+        .logo-display {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: var(--spacing-sm);
+            flex-wrap: wrap;
+        }
+
+        .logo-card {
+            background: white;
+            padding: var(--spacing-sm);
+            border-radius: 6px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            animation: slide-in 0.6s ease-out;
+        }
+
+        .logo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .logo-card img {
+            height: 60px;
+            width: auto;
+            max-width: 120px;
+            border-radius: 4px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* ===== MISSION & VISION SECTION (Mobile-First) ===== */
+        .mission-vision {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .mission-card {
+            background: linear-gradient(135deg, #e0e7ff 0%, #f3f4f6 100%);
+            padding: var(--spacing-md);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+            animation: slide-in 0.7s ease-out;
+        }
+
+        .vision-card {
+            background: linear-gradient(135deg, #fef3c7 0%, #f3f4f6 100%);
+            padding: var(--spacing-md);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-warning);
+            animation: slide-in 0.8s ease-out;
+        }
+
+        .values-card {
+            background: linear-gradient(135deg, #c7d2fe 0%, #f3f4f6 100%);
+            padding: var(--spacing-md);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-alt-color);
+            animation: slide-in 0.9s ease-out;
+        }
+
+        .mission-card h3, .vision-card h3, .values-card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .mission-card p, .vision-card p, .values-card p {
+            color: var(--text-body);
+            line-height: var(--lh-relaxed);
+            font-size: 0.9rem;
+        }
+
+        /* ===== VALUES SECTION (Mobile-First) ===== */
+        .values-section {
+            background: white;
+            padding: var(--spacing-md);
+            border-radius: 8px;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .values-section h2 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: var(--spacing-md);
+            animation: slide-up 0.6s ease-out;
+        }
+
+        .values-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+        }
+
+        .value-item {
+            padding: var(--spacing-md);
+            background: linear-gradient(135deg, #f3f4f6 0%, #f9fafb 100%);
+            border-radius: 6px;
+            border-left: 3px solid var(--accent-color);
+            transition: all 0.3s ease;
+            animation: slide-in 0.6s ease-out;
+        }
+
+        .value-item:hover {
+            box-shadow: 0 6px 15px rgba(0, 114, 255, 0.1);
+        }
+
+        .value-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .value-item h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 0.3rem;
+        }
+
+        .value-item p {
+            color: var(--text-body);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        /* ===== STATS SECTION (Mobile-First) ===== */
+        .stats-section {
+            background: linear-gradient(135deg, var(--accent-color) 0%, #1d4ed8 100%);
+            color: white;
+            padding: var(--spacing-md);
+            border-radius: 8px;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+            text-align: center;
+        }
+
+        .stat-box {
+            padding: var(--spacing-md);
+            animation: slide-in 0.6s ease-out;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 900;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        /* ===== CTA SECTION (Mobile-First) ===== */
+        .cta-section {
+            background: white;
+            padding: var(--spacing-md);
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .cta-section h2 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .cta-section p {
+            font-size: 0.9rem;
+            color: var(--text-body);
+            margin-bottom: var(--spacing-md);
+            line-height: var(--lh-relaxed);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #1d4ed8;
+            transform: scale(1.05);
+        }
+
+        /* ===== FOOTER (Mobile-First) ===== */
+        footer {
+            background-color: #1f2937;
+            color: white;
+            padding: var(--spacing-md);
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-section h4 {
+            margin-bottom: var(--spacing-sm);
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-section a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.8rem;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: var(--spacing-md);
+            text-align: center;
+            color: #9ca3af;
+            font-size: 0.8rem;
+        }
+
+        /* ===== MEDIA QUERIES (Progressive Enhancement) ===== */
+        @media (min-width: 480px) {
+            nav {
+                padding: 0 var(--spacing-md);
+            }
+
+            .logo-img {
+                height: 45px;
+            }
+
+            .logo-text {
+                font-size: 1.2rem;
+            }
+
+            .hero {
+                padding: 2.5rem var(--spacing-md) 2rem;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+
+            .about-section {
+                padding: var(--spacing-lg) var(--spacing-md);
+            }
+
+            .about-text h2 {
+                font-size: 1.5rem;
+            }
+
+            .about-text p {
+                font-size: 0.95rem;
+            }
+
+            .about-image img {
+                max-width: 320px;
+            }
+
+            .logo-section-about h3 {
+                font-size: 1.25rem;
+            }
+
+            .logo-card img {
+                height: 70px;
+            }
+
+            .mission-card h3, .vision-card h3, .values-card h3 {
+                font-size: 1.15rem;
+            }
+
+            .mission-card p, .vision-card p, .values-card p {
+                font-size: 0.95rem;
+            }
+
+            .values-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .value-item h3 {
+                font-size: 1.05rem;
+            }
+
+            .value-item p {
+                font-size: 0.9rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .stat-label {
+                font-size: 0.9rem;
+            }
+
+            .cta-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .cta-section p {
+                font-size: 0.95rem;
+            }
+
+            .cta-button {
+                padding: 0.8rem 1.8rem;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            nav {
+                padding: 0 var(--spacing-2xl);
+            }
+
+            /* Show Desktop Navigation */
+            nav ul {
+                display: flex;
+            }
+
+            .nav-buttons {
+                display: flex;
+            }
+
+            /* Hide Mobile Menu */
+            .mobile-menu-btn {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: none !important;
+            }
+
+            .mobile-menu-overlay {
+                display: none !important;
+            }
+
+            .logo-img {
+                height: 50px;
+            }
+
+            .logo-text {
+                font-size: 1.4rem;
+            }
+
+            .btn-login {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.95rem;
+            }
+
+            .btn-signup {
+                padding: 0.7rem 2rem;
+                font-size: 0.95rem;
+            }
+
+            .hero {
+                padding: 4rem var(--spacing-2xl) 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .about-section {
+                padding: var(--spacing-2xl) var(--spacing-2xl);
+                margin-top: -2rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--spacing-2xl);
+            }
+
+            .about-text h2 {
+                font-size: 2rem;
+            }
+
+            .about-text p {
+                font-size: 1rem;
+            }
+
+            .about-image img {
+                max-width: 100%;
+            }
+
+            .logo-section-about {
+                padding: var(--spacing-lg);
+            }
+
+            .logo-section-about h3 {
+                font-size: 1.5rem;
+            }
+
+            .logo-display {
+                gap: var(--spacing-lg);
+            }
+
+            .logo-card {
+                padding: var(--spacing-md);
+            }
+
+            .logo-card img {
+                height: 80px;
+            }
+
+            .mission-vision {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: var(--spacing-lg);
+            }
+
+            .mission-card, .vision-card, .values-card {
+                padding: var(--spacing-lg);
+            }
+
+            .mission-card h3, .vision-card h3, .values-card h3 {
+                font-size: 1.4rem;
+            }
+
+            .mission-card p, .vision-card p, .values-card p {
+                font-size: 1rem;
+            }
+
+            .values-section {
+                padding: var(--spacing-lg);
+            }
+
+            .values-section h2 {
+                font-size: 2rem;
+            }
+
+            .values-list {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+
+            .value-item {
+                padding: var(--spacing-lg);
+            }
+
+            .value-item h3 {
+                font-size: 1.1rem;
+            }
+
+            .value-item p {
+                font-size: 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .stat-box {
+                padding: var(--spacing-lg);
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .stat-label {
+                font-size: 1rem;
+            }
+
+            .cta-section {
+                padding: var(--spacing-lg);
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+
+            .cta-section p {
+                font-size: 1.05rem;
+            }
+
+            .cta-button {
+                padding: 1rem 2.5rem;
+                font-size: 1rem;
+            }
+
+            .footer-container {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: var(--spacing-2xl);
+            }
+
+            footer {
+                padding: var(--spacing-2xl);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            nav {
+                padding: 0 var(--spacing-2xl);
+            }
+
+            nav ul {
+                gap: 2.8rem;
+            }
+
+            body {
+                font-size: 1.05rem;
+            }
+
+            .hero {
+                padding: 5rem var(--spacing-2xl) 4rem;
+            }
+
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .about-section {
+                padding: var(--spacing-2xl);
+            }
+
+            .about-text h2 {
+                font-size: 2.2rem;
+            }
+
+            .about-text p {
+                font-size: 1.05rem;
+            }
+
+            .about-image img {
+                max-width: 400px;
+            }
+
+            .logo-card img {
+                height: 80px;
+                max-width: 150px;
+            }
+        }
+
+        /* ===== ANIMATIONS (Preserved) ===== */
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes slide-in {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slide-up {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .animate-slide-in {
+            animation: slide-in 0.8s ease-out;
+        }
+
+        .animate-bounce {
+            animation: bounce 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header>
+        <nav>
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <img src="images/logo.png" alt="Vedra Learn" class="logo-img">
+                <span class="logo-text">VedraLearn</span>
+            </div>
+
+            <!-- Desktop Navigation Menu -->
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#community">Community</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+            <!-- Desktop Buttons -->
+            <div class="nav-buttons">
+                <a href="login.html" class="btn-login">Login</a>
+                <a href="getstarted.html" class="btn-signup">Get Started</a>
+            </div>
+
+            <!-- Mobile Menu Button (3-dot hamburger) -->
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">⋮</button>
+        </nav>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="toggleMobileMenu()"></div>
+
+        <!-- Mobile Menu Sidebar -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html" onclick="toggleMobileMenu()">Home</a></li>
+                <li><a href="about.html" onclick="toggleMobileMenu()">About</a></li>
+                <li><a href="index.html#services" onclick="toggleMobileMenu()">Services</a></li>
+                <li><a href="index.html#community" onclick="toggleMobileMenu()">Community</a></li>
+                <li><a href="index.html#contact" onclick="toggleMobileMenu()">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-buttons">
+                <a href="login.html" class="btn-login" onclick="toggleMobileMenu()">Login</a>
+                <a href="getstarted.html" class="btn-signup" onclick="toggleMobileMenu()">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>About VedraLearn Technologies</h1>
+            <p>Empowering the next generation of tech professionals through real-world experience, industry mentorship, and career transformation.</p>
+        </div>
+    </section>
+
+    <!-- Main About Section -->
+    <section class="about-section">
+        <!-- Company Logo Display -->
+        <div class="logo-section-about">
+            <h3>🎓 VedraLearn Technologies</h3>
+            <div class="logo-display">
+                <div class="logo-card">
+                    <img src="images/logo.png" alt="VedraLearn Logo">
+                </div>
+                <div style="text-align: left; flex: 1; min-width: 300px;">
+                    <p style="font-size: 1rem; color: #555; line-height: 1.8; text-align: left;">
+                        <strong>VedraLearn Technologies</strong> is a forward-thinking educational technology platform dedicated to bridging the gap between academic learning and industry requirements. We connect aspiring professionals with real-world internships, live projects, and expert mentorship to accelerate their career growth.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mission, Vision, Values -->
+        <div class="mission-vision">
+            <div class="mission-card">
+                <h3>🎯 Our Mission</h3>
+                <p>To provide accessible, affordable, and high-quality learning experiences that equip students and graduates with practical skills, industry knowledge, and professional networks needed to succeed in their tech careers.</p>
+            </div>
+            <div class="vision-card">
+                <h3>✨ Our Vision</h3>
+                <p>To be the leading platform where talent meets opportunity, creating a community of skilled professionals who drive innovation and create positive impact in the technology industry globally.</p>
+            </div>
+            <div class="values-card">
+                <h3>💎 Core Values</h3>
+                <p><strong>Integrity:</strong> Honest and transparent in all interactions. <strong>Excellence:</strong> Commitment to highest quality standards. <strong>Impact:</strong> Creating meaningful change in learners' lives.</p>
+            </div>
+        </div>
+
+        <!-- About Content Grid -->
+        <div class="about-grid">
+            <div class="about-text">
+                <h2>Who We Are</h2>
+                <p>VedraLearn Technologies was founded with a simple yet powerful belief: that every aspiring tech professional deserves access to real-world experience and expert guidance. We're not just another online learning platform; we're a bridge connecting ambitious learners with industry leaders and real projects.</p>
+                <p>Our team consists of experienced software engineers, educators, and industry mentors who have worked at top tech companies. We understand what employers are looking for and design our programs accordingly.</p>
+                <p>With thousands of successful alumni working at leading companies worldwide, we've proven our commitment to transforming careers and building the future of technology.</p>
+                <ul style="margin-top: 1.5rem; color: #555; font-size: 1rem; line-height: 1.8; margin-left: 1.5rem;">
+                    <li>✔️ 5000+ Successful Interns Placed</li>
+                    <li>✔️ 200+ Industry Partners</li>
+                    <li>✔️ 50+ Expert Mentors</li>
+                    <li>✔️ 98% Program Completion Rate</li>
+                </ul>
+            </div>
+            <div class="about-image">
+                <img src="https://via.placeholder.com/400x300?text=Our+Team+at+Work" alt="VedraLearn Team">
+            </div>
+        </div>
+
+        <!-- Why Choose Us -->
+        <div style="background: linear-gradient(135deg, #e0e7ff 0%, #f3f4f6 100%); padding: 2.5rem; border-radius: 12px; margin-bottom: 3rem;">
+            <h3 style="font-size: 1.5rem; font-weight: 700; color: #0a2540; margin-bottom: 1.5rem; text-align: center;">Why Choose VedraLearn?</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🏢</div>
+                    <h4 style="color: #0a2540; font-weight: 700; margin-bottom: 0.5rem;">Real Company Projects</h4>
+                    <p style="color: #666; font-size: 0.95rem;">Work on actual client projects and live problems, not simulations.</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">👨‍🏫</div>
+                    <h4 style="color: #0a2540; font-weight: 700; margin-bottom: 0.5rem;">Expert Mentors</h4>
+                    <p style="color: #666; font-size: 0.95rem;">Learn from industry veterans with 10+ years of experience.</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">📜</div>
+                    <h4 style="color: #0a2540; font-weight: 700; margin-bottom: 0.5rem;">Verified Certificates</h4>
+                    <p style="color: #666; font-size: 0.95rem;">Get recognized credentials valued by top employers.</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🌐</div>
+                    <h4 style="color: #0a2540; font-weight: 700; margin-bottom: 0.5rem;">Global Network</h4>
+                    <p style="color: #666; font-size: 0.95rem;">Join a community of 50,000+ learners worldwide.</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">💼</div>
+                    <h4 style="color: #0a2540; font-weight: 700; margin-bottom: 0.5rem;">Placement Support</h4>
+                    <p style="color: #666; font-size: 0.95rem;">Get career guidance and direct employer connections.</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">⭐</div>
+                    <h4 style="color: #0a2540; font-weight: 700; margin-bottom: 0.5rem;">Flexible Learning</h4>
+                    <p style="color: #666; font-size: 0.95rem;">Learn at your own pace with lifetime access to materials.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Core Values Section -->
+        <div class="values-section">
+            <h2>Our Core Values</h2>
+            <div class="values-list">
+                <div class="value-item">
+                    <div class="value-icon">🎯</div>
+                    <h3>Student-Centric</h3>
+                    <p>Everything we do is focused on student success and career growth. Your goals are our goals.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">💡</div>
+                    <h3>Innovation</h3>
+                    <p>We continuously evolve our curriculum to match industry trends and emerging technologies.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🤝</div>
+                    <h3>Collaboration</h3>
+                    <p>We believe in building strong partnerships with industry leaders, mentors, and the global community.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">📈</div>
+                    <h3>Excellence</h3>
+                    <p>We maintain the highest standards in education, mentorship quality, and learner outcomes.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🌍</div>
+                    <h3>Global Impact</h3>
+                    <p>We're committed to making quality tech education accessible to learners from all backgrounds worldwide.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🔒</div>
+                    <h3>Integrity</h3>
+                    <p>We're transparent, honest, and ethical in all our dealings with learners, partners, and stakeholders.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="cta-section">
+            <h2>Join Our Community Today</h2>
+            <p>Start your journey to a successful tech career with VedraLearn Technologies. Connect with mentors, work on real projects, and transform your future.</p>
+            <a href="getstarted.html" class="cta-button">Explore Programs</a>
+            <a href="index.html#contact" class="cta-button" style="margin-left: 1rem; background: transparent; color: #2563eb; border: 2px solid #2563eb;">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>About Vedra Learn</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Our Mission</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Blog & Resources</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Learning Paths</h4>
+                <ul>
+                    <li><a href="index.html#courses">Browse All Courses</a></li>
+                    <li><a href="#">Learning Paths</a></li>
+                    <li><a href="#">Certifications</a></li>
+                    <li><a href="#">Skill Assessments</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support & Help</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="index.html#contact">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Community Forum</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal & Policies</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                    <li><a href="#">Cookie Settings</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 VedraLearn Technologies. All rights reserved. Empowering the next generation of tech professionals.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const overlay = document.getElementById('mobileMenuOverlay');
+            
+            mobileMenu.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                toggleMobileMenu();
+            });
+        });
+
+        // Prevent scrolling when menu is open
+        const mobileMenu = document.getElementById('mobileMenu');
+        const observer = new MutationObserver(() => {
+            if (mobileMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        });
+        observer.observe(mobileMenu, { attributes: true });
+    </script>
+</body>
+</html>

@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development - VedraLearn Technologies</title>
+    <style>
+        /* ===== CSS VARIABLES ===== */
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary-color: #0a2540;
+            --accent-color: #0072ff;
+            --bg-white: #ffffff;
+            --bg-light: #f8f9fa;
+            --bg-gradient1: #e3eafc;
+            --bg-gradient2: #f7fafc;
+            --text-body: #666666;
+            --text-light: #9ca3af;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 20px rgba(0,114,255,0.1);
+            
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 2.5rem;
+            --spacing-2xl: 3rem;
+            --spacing-3xl: 4rem;
+            
+            --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* ===== BASE MOBILE-FIRST STYLES (320px) ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--secondary-color);
+            background-color: var(--bg-light);
+        }
+
+        /* ===== HEADER & NAVIGATION (Mobile-First) ===== */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.6rem 1rem;
+            flex-wrap: wrap;
+            gap: var(--spacing-xs);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .logo-img {
+            height: 30px;
+            width: auto;
+            border-radius: 4px;
+        }
+
+        .logo-text {
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.75rem;
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--primary-dark);
+        }
+
+        /* ===== HERO SECTION (Mobile-First) ===== */
+        .hero {
+            background: linear-gradient(135deg, var(--bg-gradient1) 0%, var(--bg-gradient2) 100%);
+            padding: var(--spacing-lg) 1rem;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 0.8rem;
+            color: var(--text-body);
+            margin-bottom: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .hero-cta {
+            font-size: 0.75rem;
+            padding: 0.6rem 1rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .animated-svg {
+            width: 100%;
+            max-width: 280px;
+            height: auto;
+        }
+
+        /* ===== CONTENT SECTION (Mobile-First) ===== */
+        .content-section {
+            max-width: 1200px;
+            margin: var(--spacing-lg) auto;
+            padding: 0 1rem;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .feature-card {
+            background: var(--bg-white);
+            padding: 1.2rem;
+            border-radius: 6px;
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card h3 {
+            font-size: 1rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.6rem;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            color: var(--text-body);
+            font-size: 0.75rem;
+            line-height: 1.5;
+        }
+
+        /* ===== CONTACT SECTION (Mobile-First) ===== */
+        .contact-section {
+            background: white;
+            padding: var(--spacing-lg) 1rem;
+            border-radius: 8px;
+            max-width: 900px;
+            margin: var(--spacing-lg) auto;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .contact-section p {
+            font-size: 0.8rem;
+            color: var(--text-body);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .email-box {
+            background: linear-gradient(135deg, #e0e7ff 0%, #f0f4ff 100%);
+            padding: var(--spacing-md);
+            border-radius: 6px;
+            margin-bottom: var(--spacing-md);
+            border: 2px solid #dbeafe;
+        }
+
+        .email-box a {
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            text-decoration: none;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .email-box a:hover {
+            color: #0056cc;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.7rem 1.2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            margin-top: var(--spacing-sm);
+        }
+
+        .cta-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* ===== FOOTER (Mobile-First) ===== */
+        footer {
+            background-color: #1f2937;
+            color: white;
+            padding: var(--spacing-md);
+            text-align: center;
+            margin-top: var(--spacing-lg);
+        }
+
+        footer p {
+            color: var(--text-light);
+            font-size: 0.7rem;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* ===== MEDIA QUERIES (Progressive Enhancement) ===== */
+        @media (min-width: 480px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .logo-img {
+                height: 35px;
+            }
+
+            .logo-text {
+                font-size: 1rem;
+            }
+
+            .back-link {
+                font-size: 0.8rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero {
+                padding: var(--spacing-xl) var(--spacing-md);
+            }
+
+            .hero-text h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero-text p {
+                font-size: 0.9rem;
+            }
+
+            .animated-svg {
+                max-width: 300px;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .features-grid {
+                gap: var(--spacing-lg);
+            }
+
+            .feature-card {
+                padding: var(--spacing-md);
+            }
+
+            .feature-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .feature-card p {
+                font-size: 0.85rem;
+            }
+
+            .contact-section {
+                padding: var(--spacing-xl) var(--spacing-md);
+            }
+
+            .contact-section h2 {
+                font-size: 1.6rem;
+            }
+
+            .email-box {
+                padding: var(--spacing-lg);
+            }
+
+            .email-box a {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            nav {
+                padding: 1.2rem 2.5rem;
+            }
+
+            .logo-img {
+                height: 42px;
+            }
+
+            .logo-text {
+                font-size: 1.2rem;
+            }
+
+            .back-link {
+                font-size: 0.9rem;
+                margin-bottom: 2rem;
+            }
+
+            .hero {
+                padding: var(--spacing-3xl) var(--spacing-lg);
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--spacing-2xl);
+            }
+
+            .hero-text h1 {
+                font-size: 2.8rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-text p {
+                font-size: 1.1rem;
+                margin-bottom: 2rem;
+            }
+
+            .animated-svg {
+                max-width: 350px;
+            }
+
+            .content-section {
+                padding: 0 var(--spacing-lg);
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+
+            .feature-card {
+                padding: var(--spacing-lg);
+            }
+
+            .feature-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .feature-card p {
+                font-size: 0.95rem;
+            }
+
+            .contact-section {
+                padding: var(--spacing-2xl);
+            }
+
+            .contact-section h2 {
+                font-size: 2rem;
+            }
+
+            .contact-section p {
+                font-size: 1rem;
+            }
+
+            .email-box {
+                padding: 2rem;
+                display: inline-block;
+            }
+
+            .email-box a {
+                font-size: 1.4rem;
+            }
+
+            .cta-button {
+                padding: 1rem 2.5rem;
+                font-size: 1rem;
+            }
+
+            footer {
+                padding: 2rem;
+            }
+
+            footer p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            nav {
+                padding: 1.2rem 2.5rem;
+            }
+
+            .content-section {
+                padding: 0 var(--spacing-2xl);
+            }
+        }
+    </style>
+
+        .feature-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            max-width: 900px;
+            margin: 3rem auto;
+            box-shadow: 0 4px 20px rgba(0,114,255,0.1);
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #0a2540;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-section p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .email-box {
+            background: linear-gradient(135deg, #e0e7ff 0%, #f0f4ff 100%);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border: 2px solid #dbeafe;
+        }
+
+        .email-box a {
+            display: inline-block;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #0072ff;
+            text-decoration: none;
+            border-bottom: 2px solid #0072ff;
+            padding-bottom: 0.3rem;
+            transition: color 0.3s ease;
+        }
+
+        .email-box a:hover {
+            color: #0056cc;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1f2937;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            html {
+                scroll-behavior: smooth;
+            }
+
+            nav {
+                padding: 0.6rem 1rem;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .logo-section {
+                gap: 0.4rem;
+            }
+
+            .logo-img {
+                height: 30px;
+                width: auto;
+                border-radius: 4px;
+            }
+
+            .logo-text {
+                font-size: 0.85rem;
+                font-weight: 800;
+                color: #0a2540;
+            }
+
+            .back-link {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.3rem;
+                color: #2563eb;
+                text-decoration: none;
+                font-weight: 600;
+                margin-bottom: 1rem;
+                font-size: 0.75rem;
+                transition: color 0.3s ease;
+            }
+
+            /* Hero Section */
+            .hero {
+                background: linear-gradient(135deg, #e3eafc 0%, #f7fafc 100%);
+                padding: 2rem 1rem;
+            }
+
+            .hero-content {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                align-items: center;
+            }
+
+            .hero-text h1 {
+                font-size: 1.3rem;
+                font-weight: 800;
+                color: #0a2540;
+                margin-bottom: 1rem;
+                line-height: 1.2;
+            }
+
+            .hero-text p {
+                font-size: 0.8rem;
+                color: #555;
+                margin-bottom: 1.2rem;
+                line-height: 1.6;
+            }
+
+            .hero-cta {
+                font-size: 0.75rem;
+                padding: 0.6rem 1rem;
+                display: inline-block;
+                margin-bottom: 1rem;
+            }
+
+            .hero-svg {
+                max-width: 100%;
+                height: auto;
+            }
+
+            /* Sections */
+            .section {
+                padding: 2rem 1rem;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .section h2 {
+                font-size: 1.3rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .section h3 {
+                font-size: 1.1rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .section p {
+                font-size: 0.8rem;
+                line-height: 1.6;
+                margin-bottom: 1rem;
+            }
+
+            /* Features Grid */
+            .features-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .feature-card {
+                background: white;
+                padding: 1.2rem;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+                transition: all 0.3s ease;
+            }
+
+            .feature-icon {
+                font-size: 1.8rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .feature-card h3 {
+                font-size: 1rem;
+                margin-bottom: 0.6rem;
+                color: #2563eb;
+            }
+
+            .feature-card p {
+                font-size: 0.75rem;
+                color: #666;
+                line-height: 1.5;
+            }
+
+            /* Contact Section */
+            .contact-section {
+                padding: 2rem 1rem;
+                background: #f8f9fa;
+                text-align: center;
+            }
+
+            .contact-section h2 {
+                font-size: 1.3rem;
+                margin-bottom: 1.2rem;
+            }
+
+            .contact-section p {
+                font-size: 0.8rem;
+                margin-bottom: 1.2rem;
+            }
+
+            .contact-info {
+                display: flex;
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .contact-info a {
+                font-size: 0.75rem;
+                color: #2563eb;
+                text-decoration: none;
+                font-weight: 600;
+            }
+
+            .cta-button {
+                background: #2563eb;
+                color: white;
+                padding: 0.6rem 1.2rem;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                text-decoration: none;
+                font-weight: 700;
+                font-size: 0.75rem;
+                transition: all 0.3s ease;
+                display: inline-block;
+                margin-top: 1rem;
+            }
+
+            .cta-button:hover {
+                background: #1d4ed8;
+                transform: translateY(-2px);
+            }
+
+            /* Footer */
+            footer {
+                background-color: #1f2937;
+                color: white;
+                padding: 1.5rem 1rem;
+                text-align: center;
+                margin-top: 2rem;
+                font-size: 0.7rem;
+            }
+
+            footer p {
+                color: #9ca3af;
+                font-size: 0.7rem;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo-section">
+                <img src="../images/logo.png" alt="VedraLearn" class="logo-img">
+                <span class="logo-text">VedraLearn</span>
+            </div>
+            <a href="../index.html" class="back-link" style="margin-bottom: 0;">← Back to Home</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Web Development</h1>
+                <p>Master full-stack web development and build modern, responsive, and scalable web applications using the latest technologies and best practices.</p>
+                <p style="font-size: 0.95rem; color: #888;">Learn frontend frameworks, backend technologies, databases, and deployment strategies to become a professional web developer.</p>
+            </div>
+            <div class="hero-image">
+                <svg class="animated-svg floating" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="200" height="200" fill="url(#grad1)" opacity="0.1" rx="20"/>
+                    <rect x="40" y="30" width="120" height="140" fill="none" stroke="url(#grad1)" stroke-width="2" rx="10"/>
+                    <line x1="40" y1="70" x2="160" y2="70" stroke="url(#grad1)" stroke-width="2"/>
+                    <circle cx="60" cy="50" r="6" fill="url(#grad1)"/>
+                    <circle cx="80" cy="50" r="6" fill="url(#grad1)"/>
+                    <circle cx="100" cy="50" r="6" fill="url(#grad1)"/>
+                    <text x="50" y="120" font-size="14" fill="url(#grad1)" font-weight="bold">&lt;code&gt;</text>
+                    <text x="60" y="140" font-size="12" fill="url(#grad1)">HTML CSS JS</text>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <h2 class="section-title">What You'll Learn</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Frontend Development</h3>
+                <p>HTML5, CSS3, JavaScript ES6+, React, Vue.js, responsive design, and modern UI frameworks for building interactive web interfaces.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Backend Development</h3>
+                <p>Node.js, Express, Python, PHP, RESTful APIs, authentication, session management, and server-side logic implementation.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Database Management</h3>
+                <p>SQL databases (MySQL, PostgreSQL), NoSQL databases (MongoDB), database design, queries, and data optimization techniques.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Full Stack Integration</h3>
+                <p>Connecting frontend and backend, API integration, real-time applications, WebSockets, and full-stack project deployment.</p>
+            </div>
+            <div class="feature-card">
+                <h3>DevOps & Deployment</h3>
+                <p>Git version control, CI/CD pipelines, Docker, cloud deployment (AWS, Heroku), monitoring, and performance optimization.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Modern Tools & Best Practices</h3>
+                <p>Webpack, NPM, testing frameworks, code quality tools, security practices, and industry-standard development workflows.</p>
+            </div>
+        </div>
+
+        <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); margin-bottom: 2rem;">
+            <h3 style="font-size: 1.3rem; font-weight: 700; color: #0a2540; margin-bottom: 1rem;">Program Highlights</h3>
+            <ul style="list-style: none; color: #666;">
+                <li style="padding: 0.5rem 0;">✓ 4-8 week intensive program</li>
+                <li style="padding: 0.5rem 0;">✓ Hands-on real-world projects</li>
+                <li style="padding: 0.5rem 0;">✓ Expert mentorship and code reviews</li>
+                <li style="padding: 0.5rem 0;">✓ Build a professional portfolio</li>
+                <li style="padding: 0.5rem 0;">✓ Job interview preparation</li>
+                <li style="padding: 0.5rem 0;">✓ Industry-recognized certification</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <h2>Ready to Start?</h2>
+        <p>Join our Web Development program and launch your career as a professional developer. Get in touch with us today!</p>
+        
+        <div class="email-box">
+            <p style="margin-bottom: 0.5rem; color: #666;">📧 Email Us</p>
+            <a href="mailto:info@vedralearn.online">info@vedralearn.online</a>
+            <p style="font-size: 0.9rem; color: #888; margin-top: 0.5rem;">We respond within 24 hours</p>
+        </div>
+
+        <a href="../getstarted.html" class="cta-button">Explore All Programs</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 VedraLearn Technologies. All rights reserved.</p>
+    </footer>
+</body>
+</html>
