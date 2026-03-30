@@ -26,10 +26,10 @@ window.API = {
     
     // ===== AUTO-DETECT (Recommended) =====
     // This will auto-detect where backend is running
-    BASE: getAPIBase(),
+    BASE: 'http://3.110.219.211:5000',
     
     // ===== ENDPOINTS =====
-    LOGIN: '/api/admin/login',
+ LOGIN: '/api/admin/login',
     HEALTH: '/api/health',
     USERS: '/api/users',
     USER: (id) => `/api/users/${id}`,
